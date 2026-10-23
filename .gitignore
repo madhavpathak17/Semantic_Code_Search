@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv*/
+venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# React / Node
+node_modules/
+dist/
+
+# Local data and logs
+backend/data/chroma/
+backend/data/repository/
+*.log
+install-error.txt
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db

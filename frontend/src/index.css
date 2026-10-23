@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4f51e8 transparent;
+  }
+  *::-webkit-scrollbar { width: 6px; height: 6px; }
+  *::-webkit-scrollbar-track { background: transparent; }
+  *::-webkit-scrollbar-thumb { background-color: #4f51e8; border-radius: 3px; }
+  body { @apply bg-surface-950 text-white font-sans antialiased; min-height: 100vh; }
+  code, pre { @apply font-mono; }
+}
+
+@layer components {
+  .glass-card { @apply bg-white/5 border border-white/10 backdrop-blur-sm rounded-xl; }
+
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 text-white font-medium px-4 py-2
+           rounded-lg transition-all duration-200 flex items-center gap-2
+           disabled:opacity-50 disabled:cursor-not-allowed active:scale-95;
+  }
+
+  .input-field {
+    @apply bg-white/5 border border-white/10 text-white placeholder-surface-500
+           rounded-lg px-4 py-2.5 w-full outline-none transition-all duration-200
+           focus:border-brand-500 focus:ring-1 focus:ring-brand-500/50;
+  }
+
+  .score-badge { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium font-mono; }
+  .score-high   { @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30; }
+  .score-medium { @apply bg-amber-500/20 text-amber-400 border border-amber-500/30; }
+  .score-low    { @apply bg-rose-500/20 text-rose-400 border border-rose-500/30; }
+}
